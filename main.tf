@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_tls" {
         var.common_tags,
         var.sg_tags,
         {
-            Name = "${var.project_name}-${var.environment}-${var.sg_name}"
+            Name = "${var.project_name}-${var.environment}-${var.sg_name}"  # name convention is "roboshop-dev-mongodb" that means roboshop project/dev environment/SG of mongodb
         }
 
     )
