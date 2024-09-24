@@ -14,7 +14,7 @@ resource "aws_security_group" "allow_tls" {
         }     
     }
 
-    # egress is always same for every sg, so keep egress static
+    # egress is always same for every sg, so keep egress static because outgoing traffic is from our server
     egress {
         from_port        = 0
         to_port          = 0
