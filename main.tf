@@ -14,22 +14,21 @@ resource "aws_security_group" "allow_tls" {
         }     
     }
 
-    # egress is always same for every sg, so keep egress static because outgoing traffic is from our server.
     egress {
         from_port        = 0
         to_port          = 0
         protocol         = "-1"
         cidr_blocks      = ["0.0.0.0/0"]
-        #ipv6_cidr_blocks = ["::/0"]
     }
 
     tags = merge(
         var.common_tags,
         var.sg_tags,
         {
-            Name = "${var.project_name}-${var.environment}-${var.sg_name}"  # name convention is "roboshop-dev-mongodb" that means roboshop project/dev environment/SG of mongodb
+            Name = "${var.project_name}-${var.environment}-${var.sg_name}"
         }
 
     )
-
 }
+
+# Egress is always same for every SG, so keep egress as static because, outgoing traffic is from our server. So we want only dynamic for ingress.

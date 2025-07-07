@@ -5,7 +5,7 @@ variable "environment" {
   
 }
 variable "sg_name" {
-  #default = mongodb
+
 }
 variable "common_tags" {
   default = {}
@@ -19,7 +19,6 @@ variable "vpc_id" {
   
 }
 variable "sg_description" {
-  #default = ""
   type = string
 }
 variable "sg_ingress_rules" {
