@@ -27,7 +27,6 @@ resource "aws_security_group" "allow_tls" {
         {
             Name = "${var.project_name}-${var.environment}-${var.sg_name}"
         }
-
     )
 }
 
